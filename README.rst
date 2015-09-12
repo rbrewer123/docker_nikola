@@ -28,7 +28,7 @@ Installation
 
 To build the docker image::
 
-  $ docker build -t rbrewer123/docker_nikola github.com/rbrewer123/docker_nikola
+  $ docker build -t rbrewer123/nikola github.com/rbrewer123/docker_nikola
 
 You can see your new image with this command::
 
