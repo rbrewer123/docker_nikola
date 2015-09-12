@@ -6,10 +6,6 @@ FROM nfnty/arch-mini
 RUN pacman -Syu --needed --noconfirm \
     base-devel \
     git \
-    pyalpm \
-    python-pip \
-    python-requests \
-    python-srcinfo \
     python-webassets
 
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
