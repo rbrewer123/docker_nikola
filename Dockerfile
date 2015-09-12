@@ -3,9 +3,21 @@
 
 FROM nfnty/arch-mini
 
+# add pkgbuilder repo
+RUN echo '' >>/etc/pacman.conf 
+RUN echo '[pkgbuilder]' >>/etc/pacman.conf 
+RUN echo 'Server = https://pkgbuilder-repo.chriswarrick.com/' >>/etc/pacman.conf 
+
+# gnupg bugfix
+RUN mkdir -p /root/.gnupg && \
+    touch /root/.gnupg/dirmngr_ldapservers.conf
+
+RUN pacman-key -r 5EAAEA16 
+RUN pacman-key --lsign 5EAAEA16 
+
 RUN pacman -Syu --needed --noconfirm \
     base-devel \
-    git \
+    pkgbuilder \
     python-webassets
 
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
@@ -17,10 +29,6 @@ RUN useradd -m user
 
 USER user
 WORKDIR /home/user
-
-RUN git clone https://aur.archlinux.org/pkgbuilder.git && \
-    cd pkgbuilder && \
-    makepkg -si --noconfirm 
 
 RUN pkgbuilder --noconfirm python-nikola
 
