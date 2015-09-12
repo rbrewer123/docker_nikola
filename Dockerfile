@@ -6,7 +6,8 @@ FROM nfnty/arch-mini
 
 RUN pacman -Syu --needed --noconfirm \
     base-devel \
-    git pyalpm \
+    git \
+    pyalpm \
     python-pip \
     python-requests \
     python-srcinfo \
