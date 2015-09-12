@@ -3,7 +3,6 @@
 
 FROM nfnty/arch-mini
 
-
 RUN pacman -Syu --needed --noconfirm \
     base-devel \
     git \
@@ -13,17 +12,19 @@ RUN pacman -Syu --needed --noconfirm \
     python-srcinfo \
     python-webassets
 
-
-RUN pip install -U pkgbuilder
-
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
 RUN echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen
 RUN locale-gen
+
 RUN echo 'user ALL=(ALL) NOPASSWD: ALL' >/etc/sudoers.d/user
 RUN useradd -m user
 
 USER user
 WORKDIR /home/user
+
+RUN git clone https://aur.archlinux.org/pkgbuilder.git && \
+    cd pkgbuilder && \
+    makepkg -si --noconfirm 
 
 RUN pkgbuilder --noconfirm python-nikola
 
