@@ -6,9 +6,9 @@ Purpose
 ###########
 
 This ``Dockerfile`` creates a sandboxed, runnable `Nikola
-<https://getnikola.com>`_ environment based on the latest official Debian
+<https://getnikola.com>`_ environment based on the latest official Arch
 package produced by the Nikola team.  This works in docker even if your
-host system is not running Debian.
+host system is not running Arch.
 
 
 Requirements
@@ -55,7 +55,7 @@ To run ``nikola`` from within the container, simply run the ``go`` script::
 Limitations 
 #############
 
-The only limitation I know of so far is using nikola`s ``deploy`` command.
-I'm using nikola with Amazon S3, and the ``s3cmd`` I use to deploy my site
-is not within the nikola container.  Since it's a single command to deploy
+The only limitation I know of so far is using Nikola`s ``deploy`` command.
+I'm using Nikola with Amazon S3, and the ``s3cmd`` I use to deploy my site
+is not within the Nikola container.  Since it's a single command to deploy
 my site, I have that within a separate shell script.
