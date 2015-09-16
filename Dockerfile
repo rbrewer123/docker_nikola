@@ -30,12 +30,19 @@ RUN useradd -m user
 USER user
 WORKDIR /home/user
 
-RUN pkgbuilder --noconfirm python-nikola
+RUN pkgbuilder --noconfirm \
+    python-pygal \
+    python-pyphen \
+    python-typogrify
+
+RUN pkgbuilder --noconfirm \
+    python-nikola
 
 USER root
 WORKDIR /root
 
 RUN userdel user
+RUN rm -rf /home/user
 
 COPY runasuser.sh /root/
 RUN chmod a+x /root/runasuser.sh
