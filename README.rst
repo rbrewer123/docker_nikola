@@ -38,7 +38,7 @@ Grab the ``go`` script from github like this::
 
   $ git clone https://github.com/rbrewer123/docker_nikola
 
-Now update the ``docker_nikola/go`` script to use your correct
+Now update the ``docker_nikola/nikola`` script to use your correct
 ``username``, ``uid``, ``group``, and ``gid``.  This avoids problems with
 files being owned by root or other permissions problems that often occur
 when using docker in this manner.
@@ -47,9 +47,9 @@ when using docker in this manner.
 Run
 #######
 
-To run ``nikola`` from within the container, simply run the ``go`` script::
+To run ``nikola`` from within the container, simply run the ``nikola`` script::
 
-  $ docker_nikola/go help
+  $ docker_nikola/nikola help
 
 
 Limitations 
