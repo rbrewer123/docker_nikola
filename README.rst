@@ -14,13 +14,15 @@ host system is not running Arch.
 Requirements
 ################
 
-This is tested with docker 1.8.0 running on Ubuntu 14.04.  Since it's
-main dependency is docker, it should run on any platform with docker
-installed (e.g. Windows, OS X).  It may or may not work with earlier
-versions of docker.  To install docker on your system, see the
-official `docker installation instructions
-<https://docs.docker.com/installation>`_.
+This is tested with the following software:
 
+* Nikola 7.7.2
+* docker 1.8.0 (running on Ubuntu 14.04)
+
+Since it's main dependency is docker, it should run on any platform with
+docker installed (e.g. Windows, OS X).  It may or may not work with earlier
+versions of docker.  To install docker on your system, see the official
+`docker installation instructions <https://docs.docker.com/installation>`_.
 
 
 Installation
