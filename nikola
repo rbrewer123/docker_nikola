@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # run the container as a user to simplify writing files outside the container
-docker run --rm -it -v $(pwd):$(pwd) -w $(pwd) -p 8000:8000 dmmmdfll/nikola -U ubuntu -u 1000 -G ubuntu -g 1000 nikola "$@"
+docker run --rm -it -v $(pwd):$(pwd) -w $(pwd) -p 8000:8000 dmmmdfll/nikola -U ubuntu -u 1000 -G ubuntu -g 1000 /nikola-virtualenv/bin/nikola "$@"
