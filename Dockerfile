@@ -28,8 +28,8 @@ libjpeg62-dev \
 libfreetype6 \
 libfreetype6-dev
 
-RUN pip3 install nikola
-
+RUN \
+    ["/bin/bash", "-c", "virtualenv -p /usr/bin/python3 nikola-virtualenv && source /nikola-virtualenv/bin/activate && pip3 install --upgrade Nikola[extras]"]
 COPY runasuser.sh /root/
 RUN chmod a+x /root/runasuser.sh
 
