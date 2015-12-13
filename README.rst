@@ -78,7 +78,7 @@ Nikola exited fatally with exceptions that I did not fully understand.  The exce
 
 I need to do some more research to sort out for myself what is going on before trying to guess at a fix.
 
-**I have not tried this. I am leaving this comment from forked repo at https://github.com/rbrewer123/docker_nikola because it seems likely that the same would be true for this image**
+**I have not tried a deploy. I am leaving the following limitation from forked repo at https://github.com/rbrewer123/docker_nikola because it seems likely that the same would be true for this image**
 
 The only limitation I know of so far is using Nikola`s ``deploy`` command.
 I'm using Nikola with Amazon S3, and the ``s3cmd`` I use to deploy my site
