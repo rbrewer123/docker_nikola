@@ -5,9 +5,7 @@ Nikola Appliance
 Purpose
 ###########
 
-This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com>`_ environment based on the latest Ubuntu 14.04 image, Python developer packages, and the latest Nikola package installed with pip3.
-
-    ``pip3 install nikola``
+This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com>`_ environment based on the latest Ubuntu 14.04 image, Python developer packages, and the latest Nikola package installed.
 
 This works in docker even if your host system is not running Ubuntu 14.04.
 
@@ -57,26 +55,6 @@ To run ``nikola`` from within the container, simply run the ``nikola`` script::
 
 Limitations 
 #############
-
-The package nikola is installed with 
-
-    ``pip3 install nikola``
-    
-inside the image.
-
-Some warnings are generated on ``nikola build``:
-
-* WARNING: Nikola: In order to hyphenate texts, you must install the "pyphen" Python package.
-
-* …more warnings
-
-I decided that the warnings would likely be resolved by running ``pip3 install nikola[extras]``.
-
-I tried that.
-
-Nikola exited fatally with exceptions that I did not fully understand.  The exception had something to do with not being able to find the hyphenation dictionary and that the install could not be in .local.
-
-I need to do some more research to sort out for myself what is going on before trying to guess at a fix.
 
 **I have not tried a deploy. I am leaving the following limitation from the forked repo at https://github.com/rbrewer123/docker_nikola because it seems likely that the same would be true for this image**
 
