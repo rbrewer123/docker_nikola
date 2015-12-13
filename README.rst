@@ -7,7 +7,7 @@ Purpose
 
 This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com>`_ environment based on the latest Ubuntu 14.04 image, Python developer packages, and the latest Nikola package installed with pip3.
 
-    pip3 install nikola
+    ``pip3 install nikola``
 
 This works in docker even if your host system is not running Ubuntu 14.04.
 
@@ -60,7 +60,7 @@ Limitations
 
 The package nikola is installed with 
 
-    `pip3 install nikola` 
+    ``pip3 install nikola``
     
 inside the image.
 
