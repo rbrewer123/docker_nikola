@@ -1,48 +1,34 @@
-# build command:
-#  docker build -t rbrewer123/nikola .
+FROM ubuntu:14.04
 
-FROM nfnty/arch-mini
-
-# add pkgbuilder repo
-RUN echo '' >>/etc/pacman.conf 
-RUN echo '[pkgbuilder]' >>/etc/pacman.conf 
-RUN echo 'Server = https://pkgbuilder-repo.chriswarrick.com/' >>/etc/pacman.conf 
-
-# gnupg bugfix
-RUN mkdir -p /root/.gnupg && \
-    touch /root/.gnupg/dirmngr_ldapservers.conf
-
-RUN pacman-key -r 5EAAEA16 
-RUN pacman-key --lsign 5EAAEA16 
-
-RUN pacman -Syu --needed --noconfirm \
-    base-devel \
-    pkgbuilder \
-    python-webassets
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
 RUN echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen
 RUN locale-gen
 
-RUN echo 'user ALL=(ALL) NOPASSWD: ALL' >/etc/sudoers.d/user
-RUN useradd -m user
-
-USER user
-WORKDIR /home/user
-
-RUN pkgbuilder --noconfirm \
-    python-pygal \
-    python-pyphen \
-    python-typogrify
-
-RUN pkgbuilder --noconfirm \
-    python-nikola
-
 USER root
-WORKDIR /root
 
-RUN userdel user
-RUN rm -rf /home/user
+RUN apt-get update && apt-get install -y \
+    -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
+build-essential \
+python3-dev \
+python-virtualenv \
+python3-pip \
+python3-wheel \
+libffi-dev \
+libssl-dev \
+libgtk2.0-0 \
+libSM6 \
+libxt6 \
+libgpm2 \
+libxml2-dev \
+libxslt1-dev \
+libjpeg8 \
+libjpeg62-dev \
+libfreetype6 \
+libfreetype6-dev
+
+RUN pip3 install nikola
 
 COPY runasuser.sh /root/
 RUN chmod a+x /root/runasuser.sh
