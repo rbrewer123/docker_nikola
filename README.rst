@@ -9,6 +9,9 @@ This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com
 
 This works in docker even if your host system is not running Ubuntu 14.04.
 
+Pull this image from `Docker Hub <https://hub.docker.com/r/dmmmdfll/nikola/>` with the command ``docker pull dmmmdfll/nikola``.
+
+
 
 Requirements
 ################
@@ -27,11 +30,15 @@ versions of docker.  To install docker on your system, see the official
 Installation
 ##############
 
-To build the docker image::
+To pull the docker image. (This is much faster than building your own. lxml takes at least drinking a cup of coffee's time to build on my machine.)::
+
+  $ docker pull dmmmdfll/nikola
+
+Alternatively to pulling the docker image build the docker image with::
 
   $ docker build -t dmmmdfll/nikola github.com/dmmmdfll/docker_nikola
 
-You can see your new image with this command::
+You can see your new image that you either pulled or built with this command::
 
   $ docker images
 
