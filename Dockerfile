@@ -1,13 +1,13 @@
-FROM debian 
+FROM debian:stable 
 MAINTAINER Don M <https://github.com/dmmmdfll> 
 
 ENV DEBIAN_FRONTEND noninteractive
 
+USER root
+
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
 RUN echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen
 RUN locale-gen
-
-USER root
 
 RUN apt-get update && apt-get install -y \
     -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
