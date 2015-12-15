@@ -7,7 +7,7 @@ docker run --rm -it \
 	-v $(pwd):$(pwd) \
 	-w $(pwd) \
 	-p 8000:8000 \
-dmmmdfll/nikola/debian \
+dmmmdfll/nikola \
 	-U ubuntu \
 	-u 1000 \
 	-G ubuntu \
