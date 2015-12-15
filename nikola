@@ -9,4 +9,4 @@ docker run --rm -it \
 	-u 1000 \
 	-G ubuntu \
 	-g 1000 \
-/nikola-virtualenv/bin/nikola "$@"
+nikola "$@"
