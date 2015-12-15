@@ -5,11 +5,11 @@ Nikola Appliance
 Purpose
 ###########
 
-This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com>`_ environment based on the debian:stable image, Python developer packages, and the latest Nikola package installed.
+This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com>`_ environment built with the ``debian:stable`` image, Python developer packages, and the ``Nikola[extras]`` package installed.
 
-The decision to use debian:stable was influenced by::
+The decision to use ``debian:stable`` was influenced by `this document <https://docs.docker.com/engine/articles/dockerfile_best-practices/>`_ ::
 
-    `Whenever possible, use current Official Repositories as the basis for your image.We recommend the Debian image since it’s very tightly controlled and kept extremely minimal (currently under 100 mb), while still being a full distribution. <https://docs.docker.com/engine/articles/dockerfile_best-practices/>`_
+    Whenever possible, use current Official Repositories as the basis for your image. We recommend the Debian image since it’s very tightly controlled and kept extremely minimal (currently under 100 mb), while still being a full distribution. 
 
 This image works in docker even if your host system is not running Debian.
 
