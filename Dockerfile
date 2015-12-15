@@ -26,8 +26,6 @@ libxt6 \
 libgpm2 \
 libxml2-dev \
 libxslt1-dev \
-libjpeg8 \
-libjpeg62-dev \
 libfreetype6 \
 libfreetype6-dev
 
