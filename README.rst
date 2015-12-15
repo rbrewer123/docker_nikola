@@ -9,7 +9,7 @@ This ``Dockerfile`` creates a sandboxed, runnable `Nikola <https://getnikola.com
 
 The decision to use debian:stable was influenced by::
 
-    Whenever possible, use current Official Repositories as the basis for your image.We recommend the Debian image since it’s very tightly controlled and kept extremely minimal (currently under 100 mb), while still being a full distribution. <https://docs.docker.com/engine/articles/dockerfile_best-practices/>
+> Whenever possible, use current Official Repositories as the basis for your image.We recommend the Debian image since it’s very tightly controlled and kept extremely minimal (currently under 100 mb), while still being a full distribution. <https://docs.docker.com/engine/articles/dockerfile_best-practices/>
 
 This image works in docker even if your host system is not running Debian.
 
