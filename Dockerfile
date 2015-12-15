@@ -5,9 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 
 USER root
 
-RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
-RUN echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen
-RUN locale-gen
+RUN apt-get update -qq && apt-get install -y \
+locales -qq && \
+locale-gen en_US.UTF-8 en_us && \
+locale-gen en_DK.UTF-8 en_dk && \
+dpkg-reconfigure locales
 
 RUN apt-get update && apt-get install -y \
     -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
