@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# run the container as a user to simplify writing files outside the container
+# modify lines 11-14 with values to suit your environment regarding
+# users and groups. This keeps the output files' permissions as expected.
+# my username and group on my setup is 'ubuntu' and the ids are 1000, 1000
 docker run --rm -it \
 	-v $(pwd):$(pwd) \
 	-w $(pwd) \
@@ -10,4 +12,4 @@ dmmmdfll/nikola/debian \
 	-u 1000 \
 	-G ubuntu \
 	-g 1000 \
-nikola "$@"
+/nikola-virtualenv/bin/nikola "$@"
