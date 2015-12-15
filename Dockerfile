@@ -17,7 +17,6 @@ RUN apt-get update && apt-get install -y \
     -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
 build-essential \
 python3-dev \
-python-virtualenv \
 python3-pip \
 python3-wheel \
 libffi-dev \
