@@ -1,15 +1,17 @@
 FROM debian:stable 
-MAINTAINER Don M <https://github.com/dmmmdfll> 
+MAINTAINER Don M <https://github.com/dmmmdfll/docker_nikola> 
 
 ENV DEBIAN_FRONTEND noninteractive
 
 USER root
 
 RUN apt-get update -qq && apt-get install -y \
-locales -qq && \
-locale-gen en_US.UTF-8 en_us && \
-locale-gen en_DK.UTF-8 en_dk && \
-dpkg-reconfigure locales
+locales -qq
+
+RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen && \
+    echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen && \
+    locale-gen && \
+    dpkg-reconfigure locales
 
 RUN apt-get update && apt-get install -y \
     -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
@@ -26,6 +28,7 @@ libxt6 \
 libgpm2 \
 libxml2-dev \
 libxslt1-dev \
+libjpeg62-turbo-dev \
 libfreetype6 \
 libfreetype6-dev
 
