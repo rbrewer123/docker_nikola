@@ -32,7 +32,7 @@ versions of docker.  To install docker on your system, see the official
 Installation
 ##############
 
-To pull the docker image. (This is much faster than building your own. lxml takes at least drinking a cup of coffee's time to build on my machine.)::
+To pull the docker image. (Depending on your connection speed this is likely much faster than building your own.) ::
 
   $ docker pull dmmmdfll/nikola
 
