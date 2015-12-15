@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian 
 MAINTAINER Don M <https://github.com/dmmmdfll> 
 
 ENV DEBIAN_FRONTEND noninteractive
