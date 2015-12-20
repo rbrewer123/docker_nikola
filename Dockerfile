@@ -29,9 +29,12 @@ libxml2-dev \
 libxslt1-dev \
 libjpeg62-turbo-dev \
 libfreetype6 \
-libfreetype6-dev
+libfreetype6-dev \
+default-jdk
 
-RUN pip3 install virtualenv
+RUN pip3 install \
+    virtualenv \
+    yuicompressor
 RUN \
     ["/bin/bash", \
      "-c", \
