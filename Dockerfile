@@ -17,8 +17,8 @@ RUN pacman-key --lsign 5EAAEA16
 
 RUN pacman -Syu --needed --noconfirm \
     base-devel \
-    pkgbuilder \
-    python-webassets
+    pkgbuilder
+RUN pacman -S --needed --noconfirm python-pip && pip install webassets
 
 RUN echo 'en_US.UTF-8 UTF-8' >>/etc/locale.gen
 RUN echo 'en_DK.UTF-8 UTF-8' >>/etc/locale.gen
